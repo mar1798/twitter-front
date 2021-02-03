@@ -38,6 +38,9 @@ export const theme = createMuiTheme({
             disabledBackground: 'rgb(153 216 255)',
             disabled: '#fff',
         },
+        default: {
+
+        },
     },
     shadows: [],
     overrides: {
