@@ -31,16 +31,13 @@ export const theme = createMuiTheme({
         background: {
             default: '#fff',
         },
-        text: {
-            primary: '#14171a',
-        },
         action: {
             disabledBackground: 'rgb(153 216 255)',
             disabled: '#fff',
         },
-        default: {
-
-        },
+        text: {
+            primary: '#14171a',
+        }
     },
     shadows: [],
     overrides: {

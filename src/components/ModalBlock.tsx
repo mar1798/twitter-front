@@ -25,7 +25,7 @@ export const ModalBlock: React.FC<ModalBlockProps> = ({
     }
 
     return (
-        <Dialog open={visible} onClose={onClose} aria-labelledby="form-dialog-title">
+        <Dialog  open={visible} onClose={onClose} aria-labelledby="form-dialog-title">
             <DialogTitle id="form-dialog-title">
             <IconButton onClick={onClose} color="secondary" aria-label="close">
             <CloseIcon style={{ fontSize: 26 }} color="secondary" />
