@@ -40,7 +40,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> =
                 <Avatar
                     className={classes.tweetAvatar}
                     alt={`Аватарка пользователя UserAvatar`}
-                    src="https://pbs.twimg.com/profile_images/796061890451542016/J-O1AguD_bigger.jpg"
+                    src="https://images.unsplash.com/photo-1581803118522-7b72a50f7e9f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
                 />
                 <TextareaAutosize
                     onChange={handleChangeTextarea}

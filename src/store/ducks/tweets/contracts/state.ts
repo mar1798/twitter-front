@@ -7,12 +7,12 @@ export enum LoadingState {
 
 
 export interface Tweet {
-    _id: number,
-    text: String,
+    _id: string,
+    text: string,
     user: {
-        fullname: String,
-        username: String,
-        avatarUrl: String
+        fullname: string,
+        username: string,
+        avatarUrl: string
     };
 }
 

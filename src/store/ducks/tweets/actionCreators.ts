@@ -5,7 +5,7 @@ import {Action} from "redux";
 export enum TweetsActionsType {
     SET_TWEETS = 'tweets/SET_TWEETS',
     FETCH_TWEETS = 'tweets/FETCH_TWEETS',
-    SET_LOADING = 'SET_LOADING'
+    SET_LOADING = 'tweets/SET_LOADING'
 }
 
 export interface SetTweetsActionInterface extends Action<TweetsActionsType> {

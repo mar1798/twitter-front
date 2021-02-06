@@ -6,26 +6,28 @@ import RepostIcon from "@material-ui/icons/LoopSharp";
 import LikeIcon from "@material-ui/icons/FavoriteBorderSharp";
 import ReplyIcon from "@material-ui/icons/Reply";
 import {useHomeStyles} from "../pages/Home/theme";
+import {Link} from "react-router-dom";
 
 
 interface TweetProps {
-    text: String,
+    _id: string,
+    text: string,
     classes: ReturnType<typeof useHomeStyles>;
     user: {
-      fullname: String,
-      username: String,
-      avatarUrl: String
+      fullname: string,
+      username: string,
+      avatarUrl: string
     };
 }
 
-export const Tweet: React.FC<TweetProps> = ({classes, text, user}: TweetProps): React.ReactElement => {
+export const Tweet: React.FC<TweetProps> = ({classes, text, user, _id}: TweetProps): React.ReactElement => {
         return (
             <div>
-
+                <Link className={classes.tweetWrapper} to={`/home/tweets/${_id}`}>
                     <Paper variant="outlined" className={classNames(classes.tweet ,classes.tweetsHeader)}>
-                                <Avatar alt={`Аватар пользователя ${user.fullname}`}
-                                        src={`${user.avatarUrl}`}
-                                />
+                            <Avatar alt={`Аватар пользователя ${user.fullname}`}
+                                    src={`${user.avatarUrl}`}
+                            />
                             <div>
                                 <Typography>
                                     <b>{user.fullname}</b>
@@ -61,6 +63,7 @@ export const Tweet: React.FC<TweetProps> = ({classes, text, user}: TweetProps): 
                                 </div>
                             </div>
                     </Paper>
+                </Link>
             </div>
         );
     }

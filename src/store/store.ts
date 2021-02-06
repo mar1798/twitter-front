@@ -4,6 +4,8 @@ import createSagaMiddleWare from 'redux-saga'
 
 import rootSaga from "./sagas";
 import {TweetsState} from "./ducks/tweets/contracts/state";
+import {TopicsState} from "./ducks/topics/contracts/state";
+import {TweetState} from "./ducks/tweet/contracts/state";
 
 declare global {
     interface Window {
@@ -17,6 +19,8 @@ const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOO
 
 export interface RootState {
     tweets: TweetsState;
+    topics: TopicsState;
+    tweet: TweetState
 }
 
 
