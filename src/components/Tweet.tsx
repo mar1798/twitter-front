@@ -35,7 +35,7 @@ export const Tweet: React.FC<TweetProps> = ({classes, text, user, _id}: TweetPro
                                     <span className={classes.tweetUserName}> ` </span>
                                     <span className={classes.tweetUserName}>1 h</span>
                                 </Typography>
-                                <Typography variant="body1" gutterBottom>
+                                <Typography variant="body1"  gutterBottom>
                                     {text}
                                 </Typography>
                                 <div className={classes.tweetFooter}>

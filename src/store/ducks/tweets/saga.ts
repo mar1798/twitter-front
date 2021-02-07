@@ -2,12 +2,11 @@ import {put, call, takeEvery} from 'redux-saga/effects'
 import {
     setTweets,
     setTweetsLoadingState,
-    TweetsActionsType,
-    FetchAddTweetActionInterface,
-    addTweet
+    addTweet, setAddFormState
 } from "./actionCreators";
 import {TweetsApi} from "../../../services/api/tweetsApi";
 import {LoadingState, Tweet} from "./contracts/state";
+import {FetchAddTweetActionInterface, TweetsActionsType } from './contracts/actionTypes';
 
 
 export function* fetchTweetRequest() {
@@ -33,7 +32,7 @@ export function* fetchAddTweetRequest({payload}: FetchAddTweetActionInterface) {
         const item = yield call(TweetsApi.addTweet, data);
         yield put(addTweet(item))
     } catch (error) {
-        yield put(setTweetsLoadingState(LoadingState.ERROR))
+        yield put(setAddFormState(LoadingState.ERROR))
     }
 }
 

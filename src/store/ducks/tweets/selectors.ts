@@ -13,4 +13,8 @@ export const selectIsTweetsLoading = (state: RootState): boolean =>
 export const selectIsTweetsLoaded = (state: RootState): boolean =>
     selectLoadingState(state) === LoadingState.LOADED;
 
+export const selectAddFormState = (state: RootState): LoadingState =>
+    selectTweets(state).addFormState;
+
+
 export const selectTweetsItems = createSelector(selectTweets, (tweets) => tweets.items);

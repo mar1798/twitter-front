@@ -19,4 +19,5 @@ export interface Tweet {
 export interface TweetsState {
     items: Tweet[];
     loading: LoadingState;
+    addFormState: LoadingState;
 }
