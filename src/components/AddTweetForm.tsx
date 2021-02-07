@@ -8,6 +8,8 @@ import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
 import EmojiIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
 import {useHomeStyles} from "../pages/Home/theme";
+import {useDispatch} from "react-redux";
+import {fetchAddTweet} from "../store/ducks/tweets/actionCreators";
 
 
 interface AddTweetFormProps {
@@ -18,8 +20,8 @@ interface AddTweetFormProps {
 const MAX_LENGTH = 280;
 
 export const AddTweetForm: React.FC<AddTweetFormProps> =
-    ({ classes, maxRows,}: AddTweetFormProps): React.ReactElement => {
-
+    ({ classes, maxRows}: AddTweetFormProps): React.ReactElement => {
+    const dispatch = useDispatch();
     const [text, setText] = React.useState<string>('');
     const textLimitPercent = Math.round((text.length / 280) * 100);
     const textCount = MAX_LENGTH - text.length;
@@ -31,8 +33,10 @@ export const AddTweetForm: React.FC<AddTweetFormProps> =
     };
 
     const handleClickAddTweet = (): void => {
+        dispatch(fetchAddTweet(text));
         setText('');
     };
+
 
     return (
         <div>
